@@ -1,2 +1,4 @@
-# betterboard-lms
-A Learning Management System for college courses.
+## BetterBoard
+
+A learning management system for college courses.
+Built with Ruby on Rails.

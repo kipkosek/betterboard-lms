@@ -1,0 +1,24 @@
+<div class="jumbotron text-left">
+  <div class="name">Betterboard</div>
+  <div class="tagline">A Learning Management System for College Courses</div>
+
+
+    <% if student_signed_in? %>
+      <%= after_sign_in_path_for(current_student) %>
+    <% else %>
+  <div class="login-links">
+    <p class="login">Log In</p>
+    <div class="button-margins">
+      <%= link_to "Student", new_student_session_path, class: "btn btn-primary btn-margins btn-lg" %>
+      <%= link_to "Instructor", new_instructor_session_path, class: "btn btn-warning btn-margins btn-lg" %>
+    </div>
+    </br>
+    <p class="login">Sign Up</p>
+    <div class="button-margins">
+      <%= link_to "Student", new_student_registration_path, type: "button", class: "btn btn-primary btn-margins" %>
+      <%= link_to "Instructor", new_instructor_registration_path, type: "button", class: "btn btn-warning btn-margins" %>
+
+    </div>
+  </div>
+    <% end %>
+</div>

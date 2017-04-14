@@ -44,7 +44,6 @@
   margin-right: 4em;
 }
 
-.buffer {
-  margin-top: 5%;
-  margin-left: 10%;
+.top-buffer {
+  margin-top: 10px;
 }

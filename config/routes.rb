@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  # get 'sources/index'
+  #
+  # get 'sources/show'
+  #
+  # get 'sources/new'
+  #
+  # get 'sources/edit'
+
+  resources :sources
+
   resources :dashboard, only: [:index]
 
   devise_for :instructors

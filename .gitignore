@@ -19,3 +19,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+# CarrierWave image
+public/uplads
+
+# Ignore application configuration
+/config/application.yml

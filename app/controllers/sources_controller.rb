@@ -13,7 +13,6 @@ class SourcesController < ApplicationController
 
   def create
     @source = Source.new(source_params)
-    #raise
 
     if @source.save
       flash[:notice] = "Source was added."
@@ -31,6 +30,26 @@ class SourcesController < ApplicationController
   def update
     @source = Source.find(params[:id])
     @source.assign_attributes(source_params)
+
+    if @source.save
+      flash[:notice] = "Source was updated."
+      redirect_to sources_path
+    else
+      flash.now[:alert] = "There was an error. Please try again."
+      render :edit
+    end
+  end
+
+  def destroy
+    @source = Source.find(params[:id])
+
+    if @source.destroy
+      flash[:notice] = "\"#{@source.title}\" was deleted."
+      redirect_to sources_path
+    else
+      flash.now[:alert] = "There was an error."
+      render :index
+    end
   end
 
   private

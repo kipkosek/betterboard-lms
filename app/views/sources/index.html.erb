@@ -1,29 +1,16 @@
 <div class="container">
   <h1>Sources</h1>
   <div>
-    <% if instructor_signed_in? %>
-      <%= link_to "Add New Source", new_source_path, class: 'btn btn-primary' %>
-    <% end %>
+    <%= render_new_link %>
   </div>
   <div class="row top-buffer">
     <div class="col-md-8">
       <% @sources.each do |s| %>
         <div class="media">
           <div class="media-body">
-            <h4 class="media-heading">
-              <%= s.title %></br>
-            </h4>
-              <%= s.description %></br>
-              <% if s.file? %>
-                <a target="_blank" href="<%= s.file.url %>">Download PDF</a>
-              <% end %>
-              <a target="_blank" href="<%= s.link %>"><%= s.link %></a></br>
-              <%# s.youtube %>
-              <% if instructor_signed_in? %>
-                <%= link_to "Edit", edit_source_path(s), class: "text-warning" %> |
-                <%= link_to "Delete", s, method: :delete, class: "text-danger", data: {confirm: "Are you sure you want to delete this source?"} %>
-              <% end %>
-              </br>
+            <%= render_resource_for(s) %>
+            <%= render_edit_delete_links(s) %>
+            </br>
           </div>
         </div>
       <% end %>

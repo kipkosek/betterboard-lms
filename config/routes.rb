@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-  # get 'sources/index'
-  #
-  # get 'sources/show'
-  #
-  # get 'sources/new'
-  #
-  # get 'sources/edit'
+  get 'students/index'
 
   resources :sources
 

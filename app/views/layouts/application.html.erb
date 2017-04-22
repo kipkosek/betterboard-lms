@@ -13,6 +13,9 @@
       <ul class="nav nav-tabs">
         <!-- <li><%# link_to "ClassTime", root_path %></li> -->
         <li><%= link_to "Sources", sources_path %></li>
+        <% if instructor_signed_in? %>
+          <li><%= link_to "Roster", students_index_path %></li>
+        <% end %>
 
         <div class="text-right top-buffer">
           <% if instructor_signed_in? %>

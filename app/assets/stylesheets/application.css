@@ -16,6 +16,10 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+body {
+  background-color: lightgray;
+}
+
 .name {
   font-size: 7em;
   /*line-height: 11em;*/
@@ -46,4 +50,8 @@
 
 .top-buffer {
   margin-top: 10px;
+}
+
+.links {
+  clear: both;
 }

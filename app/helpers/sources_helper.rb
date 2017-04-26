@@ -2,17 +2,19 @@ module SourcesHelper
 
   def render_resource_for(source)
     output = ""
+    output += tag(:hr)
     output += content_tag(:h4, source.title, class: "media heading")
     output += content_tag(:p, source.description)
     if source.file?
-      output += link_to("Download PDF", source.file.url, target: "_blank") + tag(:br)
+      output += link_to(render_file_name(source.file.url), source.file.url, target: "_blank") + tag(:br)
     end
     if source.link?
       output += link_to(source.link, target: "_blank") + tag(:br)
     end
-    # if source.youtube?
-    #   output += tag(:iframe, width: 560, height: 315, src: source.youtube, frameborder: 0)
-    # end
+    if source.youtube?
+      id = source.youtube.split("?v=")[1]
+      output += "<iframe width=560, height=315, src='http://www.youtube.com/embed/#{id}', frameborder=0, allowfullscreen=true></iframe>"
+    end
     output.html_safe
   end
 
@@ -31,4 +33,8 @@ module SourcesHelper
     end
     output_links.html_safe
   end
+end
+
+def render_file_name(file)
+  file.split("/").last
 end

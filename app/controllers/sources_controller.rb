@@ -55,6 +55,6 @@ class SourcesController < ApplicationController
   private
 
   def source_params
-    params.require(:source).permit(:title, :description, :file, :file_cache, :link, :youtube)
+    params.require(:source).permit(:title, :description, :file, :file_cache, :remove_file, :link, :youtube)
   end
 end

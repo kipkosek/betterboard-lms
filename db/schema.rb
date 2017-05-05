@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170408192557) do
+ActiveRecord::Schema.define(version: 20170430194927) do
+
+  create_table "assignments", force: :cascade do |t|
+    t.string   "name"
+    t.text     "instructions"
+    t.string   "duedate"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "instructors", force: :cascade do |t|
     t.string   "firstname",              default: "", null: false
@@ -58,6 +66,18 @@ ActiveRecord::Schema.define(version: 20170408192557) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.text     "note"
+    t.string   "file"
+    t.integer  "grade"
+    t.integer  "assignment_id"
+    t.integer  "student_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["assignment_id"], name: "index_submissions_on_assignment_id"
+    t.index ["student_id"], name: "index_submissions_on_student_id"
   end
 
 end

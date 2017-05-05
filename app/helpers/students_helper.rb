@@ -8,6 +8,17 @@ module StudentsHelper
     output_list.html_safe
   end
 
+  def render_student_submission(submission)
+    output = ""
+    output += submission.assignment.name
+    output += ": "
+    output += submission.note
+    if submission.file?
+      output += link_to(render_file_name(submission.file.url), submission.file.url, target: "_blank") + tag(:br)
+    end
+    output += submission.grade.to_s
+    output.html_safe
+  end
 
   private
 

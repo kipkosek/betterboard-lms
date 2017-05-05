@@ -18,23 +18,20 @@ module SourcesHelper
     output.html_safe
   end
 
-  def render_new_link
+  def render_new_source_link
     if instructor_signed_in?
       link_to "Add New Source", new_source_path, class: "btn btn-primary"
     end
   end
 
-  def render_edit_delete_links(source)
+  def render_edit_delete_source(source)
     if instructor_signed_in?
       output_links = ""
       output_links += link_to "Edit", edit_source_path(source), class: "text-warning"
       output_links += " | "
       output_links += link_to "Delete", source, method: :delete, class: "text-danger", data: {confirm: "Are you sure you want to delete this source?"}
+      output_links.html_safe
     end
-    output_links.html_safe
-  end
-end
 
-def render_file_name(file)
-  file.split("/").last
+  end
 end

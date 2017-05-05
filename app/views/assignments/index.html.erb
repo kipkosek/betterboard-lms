@@ -1,16 +1,18 @@
 <div class="container">
-  <h1>Sources</h1>
+  <h1>Assignments</h1>
   <div>
-    <%= render_new_source_link %>
+    <%= render_new_link %>
   </div>
   <div class="row top-buffer">
     <div class="col-md-8">
-      <% @sources.each do |s| %>
+      <% @assignments.each do |assignment| %>
         <div class="media">
           <div class="media-body">
-            <%= render_resource_for(s) %>
+            <h4><%= link_to assignment.name, assignment %></h4>
             <div class="links">
-              <%= render_edit_delete_source(s) %>
+              <% if instructor_signed_in? %>
+                <%= render_edit_delete_assignment(assignment) %>
+              <% end %>
             </div>
             </br>
           </div>

@@ -5,17 +5,21 @@
   </div>
   <div class="row top-buffer">
     <div class="col-md-8">
-      <% @sources.each do |s| %>
-        <div class="media">
-          <div class="media-body">
-            <%= render_resource_for(s) %>
-            <div class="links">
-              <%= render_edit_delete_source(s) %>
+      <ul class="list-group">
+        <% @sources.each do |s| %>
+          <li class="list-group-item">
+            <div class="media">
+              <div class="media-body">
+                <%= render_resource_for(s) %>
+                <div class="links">
+                  <%= render_edit_delete_source(s) %>
+                </div>
+                </br>
+              </div>
             </div>
-            </br>
-          </div>
-        </div>
-      <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

@@ -4,20 +4,24 @@
     <%= render_new_link %>
   </div>
   <div class="row top-buffer">
-    <div class="col-md-8">
-      <% @assignments.each do |assignment| %>
-        <div class="media">
-          <div class="media-body">
-            <h4><%= link_to assignment.name, assignment %></h4>
-            <div class="links">
-              <% if instructor_signed_in? %>
-                <%= render_edit_delete_assignment(assignment) %>
-              <% end %>
+    <div class="col-md-6">
+      <ul class="list-group">
+        <% @assignments.each do |assignment| %>
+          <li class="list-group-item">
+            <div class="media">
+              <div class="media-body">
+                <h4><%= link_to assignment.name, assignment %></h4>
+                <div class="links">
+                  <% if instructor_signed_in? %>
+                    <%= render_edit_delete_assignment(assignment) %>
+                  <% end %>
+                </div>
+                </br>
+              </div>
             </div>
-            </br>
-          </div>
-        </div>
-      <% end %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

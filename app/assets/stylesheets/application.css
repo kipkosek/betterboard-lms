@@ -17,7 +17,16 @@
 @import 'bootstrap';
 
 body {
+  background-color: #b3b3b3;
+}
+
+.list-group {
+  margin-top: 1em;
+}
+
+.list-group-item {
   background-color: lightgray;
+  border-color: black;
 }
 
 .name {
@@ -41,6 +50,7 @@ body {
 
 .btn {
   border-radius: 0;
+  margin-top: 1em;
 }
 
 .btn-margins {
@@ -54,4 +64,8 @@ body {
 
 .links {
   clear: both;
+}
+
+ul {
+  list-style-type: none;
 }

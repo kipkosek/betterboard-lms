@@ -10,15 +10,18 @@
 
     <% if instructor_signed_in? %>
       <h2>Submissions</h2>
-      <% @assignment.submissions.each do |submission| %>
-        <div class="media">
-          <div class="media=body">
-            <%= render_submission(submission) %>
-          </div>
-        </div>
-      <% end %>
+      <ul class="list-group">
+        <% @assignment.submissions.each do |submission| %>
+          <li class="list-group-item">
+            <div class="media">
+              <div class="media=body">
+                <%= render_submission(submission) %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul
     <% end %>
-
     <% if student_signed_in? %>
       <%= render_new_submission_link %>
     <% end %>

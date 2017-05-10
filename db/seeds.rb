@@ -42,7 +42,8 @@ assignments = Assignment.all
     student: students.shuffle.pop,
     assignment: assignments.sample,
     note: Faker::Lorem.sentence,
-    grade: rand(50...100)
+    grade: rand(50...100),
+    feedback: Faker::StarWars.quote
   )
 end
 submissions = Submission.all

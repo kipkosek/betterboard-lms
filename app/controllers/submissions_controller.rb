@@ -38,6 +38,7 @@ class SubmissionsController < ApplicationController
       flash.now[:alert] = "There was an error updating the assignment. Please try again."
       render :edit
     end
+    raise
   end
 
   def destroy

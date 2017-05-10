@@ -26,11 +26,16 @@ module AssignmentsHelper
       if submission.file?
         output += link_to(render_file_name(submission.file.url), submission.file.url, target: "_blank") + tag(:br)
       end
+      output += "Submitted by #{submission.student.firstname} #{submission.student.lastname} at #{submission.created_at}"
       if submission.grade?
-        output += content_tag(:h4, submission.grade)
+        output += content_tag(:h4, "Grade: #{submission.grade}")
       else
-        output += content_tag(:h4, "Not graded")
+        output += content_tag(:h4, "Not graded", class: "text-danger")
       end
+      if submission.feedback?
+        output += submission.feedback + tag(:br)
+      end
+      output += link_to "Grade", instructor_assignment_submission_path(submission.assignment, submission), class: "btn btn-primary"
       output.html_safe
   end
 

@@ -2,8 +2,7 @@ module SourcesHelper
 
   def render_resource_for(source)
     output = ""
-    output += tag(:hr)
-    output += content_tag(:h4, source.title, class: "media heading")
+    output += content_tag(:h4, source.title, class: "media-heading")
     output += content_tag(:p, source.description)
     if source.file?
       output += link_to(render_file_name(source.file.url), source.file.url, target: "_blank") + tag(:br)

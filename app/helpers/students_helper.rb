@@ -1,9 +1,24 @@
 module StudentsHelper
 
+  def roster_header
+    cells = ""
+    cells += (content_tag(:th, "Name"))
+    @assignments.ordered_by_duedate.each do |a|
+      cells += (content_tag(:th, a.name))
+    end
+    cells.html_safe
+  end
+
   def render_student_roster
     output_list = ""
     alphabetized_list.each do |student|
-      output_list += student.lastname + ", " + student.firstname + tag(:br)
+      student_row = content_tag(:td, student.lastname + ", " + student.firstname, class: "student-names")
+      Assignment.ordered_by_duedate.each do |assignment|
+        submission = student.submission_for(assignment)
+        content =  submission ? link_to("Grade: #{submission.grade}", instructor_assignment_submission_path(assignment, submission)) : "Not submitted"
+        student_row += content_tag(:td, content)
+      end
+      output_list += content_tag(:tr, student_row)
     end
     output_list.html_safe
   end
@@ -27,4 +42,5 @@ module StudentsHelper
       student.lastname
     end
   end
+
 end

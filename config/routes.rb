@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   namespace :instructor do
     resources :assignments do
-      resources :submissions, only: [:show, :update, :destroy]
+      resources :submissions, only: [:index, :show, :update, :destroy]
     end
   end
 

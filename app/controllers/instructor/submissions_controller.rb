@@ -2,6 +2,10 @@ class Instructor::SubmissionsController < ApplicationController
   before_action :authenticate_instructor
   before_action :set_assignment
 
+  # def index
+  #   @submissions = Submission.all
+  # end
+
   def show
     @submission = Submission.find(params[:id])
   end

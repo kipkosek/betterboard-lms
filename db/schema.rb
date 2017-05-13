@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506144357) do
+ActiveRecord::Schema.define(version: 20170510185036) do
 
   create_table "assignments", force: :cascade do |t|
     t.string   "name"
     t.text     "instructions"
-    t.string   "duedate"
+    t.datetime "duedate"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end

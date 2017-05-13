@@ -27,6 +27,29 @@ students = Student.all
 end
 sources = Source.all
 
+#Create Assignments
+5.times do |i|
+  Assignment.create!(
+    name: "Assignment #{i + 1}",
+    instructions: Faker::Lorem.sentence,
+    duedate: Faker::Date.forward(30)
+  )
+end
+assignments = Assignment.all
+
+20.times do
+  Submission.create!(
+    student: students.shuffle.pop,
+    assignment: assignments.sample,
+    note: Faker::Lorem.sentence,
+    grade: rand(50...100),
+    feedback: Faker::StarWars.quote
+  )
+end
+submissions = Submission.all
+
 puts "Seed finished"
 puts "#{Student.count} students created"
 puts "#{Source.count} sources created"
+puts "#{Assignment.count} assignments created"
+puts "#{Submission.count} submissions created"

@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Submit Your Work</h1>
+  <!-- Assignment info -->
+  <% if student_signed_in? %>
+    <%= render partial: 'form' %>
+  <% end %>
+</div>

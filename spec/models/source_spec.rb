@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Source, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:source) { create(:source) }
+
+  it { is_expected.to validate_presence_of(:title) }
+
+  describe "attributes" do
+    it "has title attribute" do
+      expect(source).to have_attributes(title: source.title)
+    end
+  end
+
 end

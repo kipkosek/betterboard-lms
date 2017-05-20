@@ -1,15 +1,15 @@
 <div class="container">
-      <div class="media">
-          <h2 class="media-heading">
-            <%= current_student.firstname %> <%= current_student.lastname %>
-          </h2>
-      </div>
-        <div class="media-body">
-      <h3>Submissions</h3>
+  <h1><%= current_student.firstname %> <%= current_student.lastname %></h1>
+    <h3>Submissions</h3>
+    <ul class="list-group">
       <% current_student.submissions.each do |submission| %>
-        <%= render_student_submission(submission) %>
-        <%= render_delete_submission(submission) %>
-        </br>
+        <li class="list-group-item">
+          <div class="media">
+            <div class="media=body">
+              <%= render_submission_for_student(submission) %>
+            </div>
+          </div>
+        </li>
       <% end %>
-    </div>
+    </ul>
 </div>

@@ -9,10 +9,10 @@
         <%= f.label :instructions %>
         <%= f.text_area :instructions, rows: 8, class: 'form-control', placeholder: "Enter assignment instructions" %>
       </div>
-      <!-- <div class="form-group">
-        <%#= f.label :duedate, "Due Date" %>
-        <%#= f.date_select :duedate, class: 'form-control' %>
-      </div> -->
+      <div class="form-group">
+        <%= f.label :duedate, "Due Date" %>
+        <%= f.date_select :duedate, class: 'form-control' %>
+      </div>
       <div class="form-group">
         <%= f.submit "Save", class: 'btn btn-success' %>
       </div>

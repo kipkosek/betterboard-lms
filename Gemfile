@@ -43,6 +43,7 @@ gem 'devise'
 gem 'figaro'
 gem 'fog'
 gem 'mini_magick'
+gem 'pundit'
 gem 'yt'
 
 group :development, :test do

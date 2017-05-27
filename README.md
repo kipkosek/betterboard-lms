@@ -9,7 +9,7 @@
 Instructors can:
 * Create, edit, and delete sources
 * Add links
-* Attach PDF files (CarrierWave gem and Amazon S3 storage)
+* Attach PDF files
 * Embed YouTube videos
 
 **Instructor View**

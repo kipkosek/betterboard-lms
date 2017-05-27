@@ -33,6 +33,9 @@ Instructors can:
 * See which students have submitted assignments
 * See grades for assignments that have been graded
 
+**Instructor View**
+![Screenshot_Gradebook](app/assets/images/Screenshot_Gradebook_Instructor.png)
+
 
 ### **Submissions**
 

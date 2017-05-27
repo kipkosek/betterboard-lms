@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Student, type: :model do
 
-# Tests for calculating grades
+# Tests for possible future grade calculation feature
   # describe "#grade calculates the correct grade" do
   #   it "should handle incomplete submissions"
   #

@@ -1,19 +1,21 @@
 <div class="jumbotron text-left">
   <div class="name">ClassTime</div>
   <div class="tagline">A Learning Management System for College Courses</div>
+  
+  <% unless current_student || current_instructor %>
+    <div class="login-links">
+      <p class="login">Log In</p>
+      <div class="button-margins">
+        <%= link_to "Student", new_student_session_path, class: "btn btn-primary btn-margins btn-lg" %>
+        <%= link_to "Instructor", new_instructor_session_path, class: "btn btn-warning btn-margins btn-lg" %>
+      </div>
+      </br>
 
-  <div class="login-links">
-    <p class="login">Log In</p>
-    <div class="button-margins">
-      <%= link_to "Student", new_student_session_path, class: "btn btn-primary btn-margins btn-lg" %>
-      <%= link_to "Instructor", new_instructor_session_path, class: "btn btn-warning btn-margins btn-lg" %>
+      <p class="login">Sign Up</p>
+      <div class="button-margins">
+        <%= link_to "Student", new_student_registration_path, class: "btn-margins" %>
+        <%= link_to "Instructor", new_instructor_registration_path, class: "btn-margins" %>
+      </div>
     </div>
-    </br>
-
-    <p class="login">Sign Up</p>
-    <div class="button-margins">
-      <%= link_to "Student", new_student_registration_path, class: "btn-margins" %>
-      <%= link_to "Instructor", new_instructor_registration_path, class: "btn-margins" %>
-    </div>
-  </div>
+  <% end %>
 </div>

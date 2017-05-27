@@ -25,3 +25,20 @@ Instructors can:
 
 **Instructor View**
 ![Screenshot_Assignments](app/assets/images/Screenshot_Assign_Instructor.png)
+
+
+### **Gradebook**
+
+Instructors can:
+* See which students have submitted assignments
+* See grades for assignments that have been graded
+
+
+### **Submissions**
+
+Students can:
+* View all their submitted assignments
+* See grades and comments for assignments that have been graded
+
+**Student View**
+![Screenshot_Submissions](app/assets/images/Screenshot_Submissions_Student.png)

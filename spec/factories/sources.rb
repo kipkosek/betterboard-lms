@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :source do
-    title "MyString"
-    description "MyText"
-    file "MyString"
-    link "MyString"
-    youtube "MyString"
+    title { Faker::Book.title }
+    description { Faker::Lorem.sentence }
+    file { Faker::Internet.url }
+    link { Faker::Internet.url }
+    youtube { Faker::Internet.url }
   end
 end

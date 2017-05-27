@@ -23,15 +23,22 @@ module StudentsHelper
     output_list.html_safe
   end
 
-  def render_student_submission(submission)
+  def render_submission_for_student(submission)
     output = ""
-    output += submission.assignment.name
-    output += ": "
-    output += submission.note
+    output += content_tag(:h4, submission.assignment.name, class: "media-heading")
+    output += submission.note + tag(:br)
     if submission.file?
       output += link_to(render_file_name(submission.file.url), submission.file.url, target: "_blank") + tag(:br)
     end
-    output += submission.grade.to_s
+    output += "Submitted at #{submission.created_at}" + tag(:br)
+    if submission.grade?
+      output += content_tag(:h4, "Grade: #{submission.grade}")
+    else
+      output += content_tag(:h4, "Not graded", class: "text-danger")
+    end
+    if submission.feedback?
+      output += content_tag(:h4, "Instructor Comments: #{submission.feedback}") + tag(:br)
+    end
     output.html_safe
   end
 

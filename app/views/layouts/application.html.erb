@@ -15,10 +15,12 @@
         <% if current_student %>
           <li><%= link_to "My Page", student_path(current_student) %>
         <% end %>
-        <li><%= link_to "Sources", sources_path %></li>
-        <li><%= link_to "Assignments", assignments_path %></li>
-        <% if instructor_signed_in? %>
-          <li><%= link_to "Roster", students_path %></li>
+        <% if current_student || current_instructor %>
+          <li><%= link_to "Sources", sources_path %></li>
+          <li><%= link_to "Assignments", assignments_path %></li>
+        <% end %>
+        <% if current_instructor %>
+          <li><%= link_to "Gradebook", students_path %></li>
         <% end %>
 
         <div class="text-right top-buffer">

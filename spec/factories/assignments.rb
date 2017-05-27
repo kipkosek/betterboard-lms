@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :assignment do
-    name "MyString"
-    instructions "MyText"
-    duedate "MyString"
+    name { Faker::Lorem.sentence }
+    instructions { Faker::Lorem.sentence }
+    duedate Faker::Date.forward(30)
   end
 end
